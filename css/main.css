@@ -1,0 +1,226 @@
+/* Standard background, just locked it in place with background attachment*/
+.ausBck
+{
+  background-image: url(../images/aus_bck.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Oxygen', sans-serif;
+  background-size: cover;
+}
+
+.hidden
+{
+  display: none;
+}
+
+#ausBtn {
+  border: 3px solid black;
+}
+#patBtn {
+  border: 3px solid black;
+}
+
+.patBck {
+  background-image: url(../images/patrick_bck.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Oxygen', sans-serif;
+}
+
+#testButton
+{
+  border: 3px solid black;
+}
+
+.stretchOne
+{
+  animation: stretchRevealOne 0.5s ease-in;
+}
+
+@keyframes stretchRevealOne {
+  0% { visibility: hidden;
+    opacity: 0;
+    transform: scaleX(3);
+    filter: blur(10px);}
+  100% { visibility: visible;
+    transform: scaleX(1);
+    filter: blur(0px);
+    opacity: 1;}
+}
+
+.stretchTwo
+{
+  animation: stretchRevealTwo 0.5s ease-in;
+}
+
+@keyframes stretchRevealTwo {
+  0% { visibility: hidden;
+    opacity: 0;
+    transform: scaleX(3);
+    filter: blur(10px);}
+  100% { visibility: visible;
+    transform: scaleX(1);
+    filter: blur(0px);
+    opacity: 1;}
+}
+
+.austinTitle {
+  content: "Austin";
+}
+
+
+
+/* This was interesting to learn. This Id allows for an image to be masked in text without it being an svg.
+Though this does not work for videos. The picture is a mashup of Amalee's thumbnail icons that I put together.*/
+
+#testLoadAnim
+{
+	-webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: url(../images/testimg.png);
+  background-position: 330px 30px; 
+  background-size: 1250px 400px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+
+
+#testLoadAnim p
+{
+  font-family: impact;
+  font-size: 400px;
+  animation: textdown 0.6s ease-out;
+}
+
+/* This was so that I could compare based on my other monitor size. To get the text slightly responsive*/
+
+@media only screen and (max-width: 1680px) 
+{
+  #testLoadAnim
+  {
+    background-size: 1270px 400px;
+    background-position: 200px 30px;
+  }
+}
+
+/* The keyframes to pull the text from the top and bounce*/
+
+@keyframes textdown
+{
+  0% { margin-top: -500px }
+  40% { margin-top: 70px }
+  80% { margin-top: 0 }
+  100% { margin-top: 0 }
+}
+
+/* The gradient loops inside the bar, although there is a problem with the animation*/
+
+#underline
+{
+  background: linear-gradient(270deg, #19d0a1, #132b78, #c014c1, #d73f45);
+  background-size: 800% 800%;
+  animation: underGradient 90s ease infinite;
+  margin: 0 auto;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+/* The idea is that the bar expands when the text bounces low, making it seem as the force of the text cracked the page.
+There is a problem with the animation though. Because the gradient is infinite, the bar will eventually reopen as the animation finishes.
+Every 90 seconds, the underline rebuilds itself, this is not intended.*/
+
+@keyframes underGradient { 
+    0%{background-position:0% 50%; width: 0; height: 20px;}
+    0.8% {width: 1250px;}
+    50%{background-position:100% 50%;width: 1250px;height: 20px;}
+    100%{background-position:0% 50%;width: 1250px;height: 20px;}
+}
+
+.testBorder
+{
+  background-color: white;
+  width: 1240px;
+  height: 640px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+/* This is the border for the big box. Background size was scaled up to allow for the gradient to flow nicer.
+This one uses the same colours as the underline.*/
+
+#border
+{
+  background: linear-gradient(270deg, #19d0a1, #132b78, #c014c1, #d73f45);
+  animation: underGradientTwo 90s ease infinite;
+  background-size: 1000% 1000%;
+  width: 1250px;
+  height: 650px;
+  margin: 100px auto;
+}
+
+#mainBox
+{
+  animation: boxEntrance 0.5s ease;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+/* The motion of something appearing from both sides, with blur isn't classy, but is very cool, and very simple*/
+
+@keyframes boxEntrance {
+  0% {
+    visibility: hidden;
+    transform: scaleX(3);
+    filter: blur(10px);
+    opacity: 0;
+    }
+  100% {
+    visibility: visible;
+    transform: scaleX(1);
+    filter: blur(0px);
+    opacity: 1;
+    }
+}
+
+/* The second set of keyframes for the big box border, nothing different from the first.*/
+
+@keyframes underGradientTwo { 
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+#heroImg img
+{
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+/* Some more detail based on the big box border. The way I managed this effect is by creating a div with just the gradient
+loop on it, then overlayed content ontop of it, just with a smaller height and width, giving the illusion of a border.
+This is using the same tactic, just a different set of colours*/
+
+#imgBorder
+{
+  background: linear-gradient(270deg, #F833FF, #3AE899, #E8D34A, #FFB34B);
+  animation: underGradientTwo 90s ease infinite;
+  background-size: 1000% 1000%;
+  width: 310px;
+  height: 310px;
+  margin-left: 900px;
+  position: relative;
+  top: 20px;
+}
+
+#heroImg p
+{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+}
