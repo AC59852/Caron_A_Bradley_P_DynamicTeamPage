@@ -54,17 +54,29 @@
 }
 
 @keyframes testRevealTwo {
-  0% { margin-top: -600px;
-    visibility: hidden;
+  0% { visibility: hidden;
+    opacity: 0;
+    transform: scaleX(3);
     filter: blur(10px);}
   100% { visibility: visible;
-    margin-top: 0;
+    transform: scaleX(1);
     filter: blur(0px);
     opacity: 1;}
 }
 
 .austinTitle {
   content: "Austin";
+}
+
+.testAnimation3 {
+  animation: slidein 0.5s ease-in;
+}
+
+@keyframes slidein {
+    0% { height: 100px; visibility: hidden;}
+    20% {   visibility: visible;}
+    35% {   visibility: visible;}
+    100% { height: 500px; visibility: visible;}
 }
 
 
@@ -82,11 +94,6 @@ Though this does not work for videos. The picture is a mashup of Amalee's thumbn
   display: flex;
   justify-content: center;
 }
-
-/* Something I find really cool yet super duper small, is that the picture masked in the text isn't cropped
-to specifically fit the text, it's actually much larger. You can see this when the text is coming down, and when it bounces
-if you slow down the animation. Because the text is the mask over the image, the image can still sit in full size
-without hurting the site or text. Small thing, but adds that extra flair, or maybe I'm the only one who think's it's cool.*/
 
 
 #testLoadAnim p
@@ -117,8 +124,7 @@ without hurting the site or text. Small thing, but adds that extra flair, or may
   100% { margin-top: 0 }
 }
 
-/* I think this is the coolest piece overall. The gradient was made with http://www.colorzilla.com/gradient-editor/.
-The gradient loops inside the bar, although there is a problem with the animation*/
+/* The gradient loops inside the bar, although there is a problem with the animation*/
 
 #underline
 {
@@ -172,8 +178,7 @@ This one uses the same colours as the underline.*/
   visibility: hidden;
 }
 
-/* This was an effect that I had wanted to use for quite awhile. The motion of something appearing from both sides,
-with blur isn't classy, but is very cool, and very simple*/
+/* The motion of something appearing from both sides, with blur isn't classy, but is very cool, and very simple*/
 
 @keyframes boxEntrance {
   0% {
@@ -228,121 +233,3 @@ This is using the same tactic, just a different set of colours*/
   line-height: 25px;
   letter-spacing: 0.5px;
 }
-
-/* The box for the song Icons and subsequently, the icons themselves*/
-
-#songBox
-{
-  margin-top: -250px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 400px;
-  justify-content: space-evenly;
-  height: 500px;
-}
-
-/* I love this transition. It's as if a banner is unraveling, but on pc. This is an effect that I have used in
-other projects, though with varying differences. Other times I have used it on a nav*/
-
-#song1::after {
-  background-image: url(../images/song1_expand.jpg);
-  background-size: 500px 300px;
-  background-repeat: no-repeat;
-  content: "";
-  width: 0;
-  top: 150px;
-  height: 500px;
-  left: 380px;
-  transition: width 0.5s ease 0s;
-  /* Normally I would very rarely use position absolute, but it works great here as it's in relation to the parent div,
-  which is the white box everything is in, and not the icon. This way, absolute positions on every screen the same as long
-  as it is inside the white box*/
-  position: absolute;
-}
-
-#song1:hover::after {
-  width: 500px;
-  height: 500px;
-}
-
-#song2::after {
-  background-image: url(../images/song2_expand.jpg);
-  background-size: 500px 300px;
-  background-repeat: no-repeat;
-  content: "";
-  width: 0;
-  top: 150px;
-  height: 500px;
-  left: 380px;
-  transition: width 0.5s ease 0s;
-  position: absolute;
-}
-
-#song2:hover::after {
-  width: 500px;
-  height: 500px;
-}
- 
-/* More detail of what was stated above. What's happening here is that, the object is hidden by default.
-But on hover, a transition effect triggers where it's acting as if it is revealing content underneath
-of the icon. But with CSS, we obviously can manipulate the placement.*/
- #song3::after {
-  background-image: url(../images/song3_expand.jpg);
-  background-size: 500px 300px;
-  background-repeat: no-repeat;
-  content: "";
-  width: 0;
-  top: 150px;
-  height: 500px;
-  left: 380px;
-  transition: width 0.5s ease 0s;
-  position: absolute;
-}
-
-#song3:hover::after {
-  width: 500px;
-  height: 500px;
-}
- 
-
- #song4::after {
-  background-image: url(../images/song4_expand.jpg);
-  background-size: 500px 300px;
-  background-repeat: no-repeat;
-  content: "";
-  width: 0;
-  top: 150px;
-  height: 500px;
-  left: 380px;
-  transition: width 0.5s ease 0s;
-  position: absolute;
-}
-
-#song4:hover::after {
-  width: 500px;
-  height: 500px;
-}
- 
-
- #song5::after {
-  background-image: url(../images/song5_expand.jpg);
-  background-size: 500px 300px;
-  background-repeat: no-repeat;
-  content: "";
-  width: 0;
-  top: 150px;
-  height: 500px;
-  left: 380px;
-  transition: width 0.5s ease 0s;
-  position: absolute;
-}
-
-#song5:hover::after {
-  width: 500px;
-  height: 500px;
-}
-
-
- 
-/* That's it! Thanks for checking out my page on Amanda Lee, my favourite musical artist!*/
