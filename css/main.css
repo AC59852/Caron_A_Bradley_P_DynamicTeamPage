@@ -1,7 +1,7 @@
 /* Standard background, just locked it in place with background attachment*/
 .ausBck
 {
-  background-image: url(../images/aus_bck.jpg);
+  background-image: url(../images/aus_bck_blur.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   font-family: 'Oxygen', sans-serif;
@@ -13,15 +13,55 @@
   display: none;
 }
 
+#btn_Box{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 565px;
+  left: 10px;
+}
+
 #ausBtn {
   border: 3px solid black;
+  width: 10%;
+  padding: 20px;
+  margin-right: 8px;
+  background-image: url(../images/killua_blur.png);
+  background-size: cover;
+  font-weight: bold;
+
 }
 #patBtn {
   border: 3px solid black;
+  width: 10%;
+  padding: 20px;
+  background-image: url(../images/angel_blur.png);
+  background-size: 190px 120px;
+  background-repeat: no-repeat;
+  background-position: -15px -4px;
+  font-weight: bold;
+}
+
+#ausBtn p {
+  margin-left: 17px;
+  cursor: default;
+}
+#patBtn p {
+  margin-left: 17px;
+  cursor: default;
+}
+
+#para{
+  position: absolute;
+  width: 800px;
+  font-size: 20px;
+  top: 140px;
+  left: 14px;
+  letter-spacing: 0.8px;
 }
 
 .patBck {
-  background-image: url(../images/patrick_bck.jpg);
+  background-image: url(../images/patrick_bck_blur.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -78,7 +118,7 @@ Though this does not work for videos. The picture is a mashup of Amalee's thumbn
 {
 	-webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-image: url(../images/testimg.png);
+  background-image: url(../images/mask_art.jpg);
   background-position: 330px 30px; 
   background-size: 1250px 400px;
   background-repeat: no-repeat;
