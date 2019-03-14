@@ -1,10 +1,8 @@
 
 /* Arrays for bio info*/
-var info = ["Born 1992, Amanda Lee is known for creating English covers of Anime songs. Her most listened to songs are Crossing Field from Sword Art Online, Guren no Yumiya from Attack on Titan, and Papermoon from Soul Eater. My top favourite songs are listed to the left. Hover over them to see a fancy transition. Click on them to be redirected to YouTube"],
-	para = document.querySelector("#test"),
+var patInfo = ["Born 1992, Amanda Lee is known for creating English covers of Anime songs. Her most listened to songs are Crossing Field from Sword Art Online, Guren no Yumiya from Attack on Titan, and Papermoon from Soul Eater. My top favourite songs are listed to the left. Hover over them to see a fancy transition. Click on them to be redirected to YouTube"],
+	para = document.querySelector("#para"),
 	ausInfo = ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eos voluptatem tenetur quod officiis, autem doloribus ex earum suscipit, perspiciatis quis? Similique fugit inventore fuga tempora velit iure maxime. Nulla."],
-	ausDesc = ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde quod voluptas quas alias, vero ad fugiat dolorum quis est facere, inventore non voluptatibus magni esse, omnis eaque vel facilis fugit!"],
-	patDesc = ["Born 1992, Amanda Lee is known for creating English covers of Anime songs. Her most listened to songs are Crossing Field from Sword Art Online, Guren no Yumiya from Attack on Titan, and Papermoon from Soul Eater. My top favourite songs are listed to the left. Hover over them to see a fancy transition. Click on them to be redirected to YouTube"],
 	desc = document.querySelector("#test2")
 /* Every trigger that occurs is broken up into their own function to more easily manage 
 what to change, and what to review*/
@@ -13,14 +11,14 @@ what to change, and what to review*/
 
 /* Start of head shot image changing*/ 
 var imgCon = document.querySelector("#img1");
-para.classList.remove("testAnimation");
+para.classList.remove("stretchOne");
 
 function changeImg() {
 	para.innerHTML = '';
-	para.innerHTML += info;
-	imgCon.classList.add('testAnimation2');
-	if (imgCon.classList.contains('testAnimation')) {
-		imgCon.classList.remove('testAnimation');
+	para.innerHTML += patInfo;
+	imgCon.classList.add('stretchTwo');
+	if (imgCon.classList.contains('stretchOne')) {
+		imgCon.classList.remove('stretchOne');
 		imgCon.src = "images/patrick_headshot.jpg";
 	}
 	else {
@@ -29,23 +27,23 @@ function changeImg() {
 }
 
 
-document.getElementById("testButton2").addEventListener("click", changeImg);
+document.getElementById("ausBtn").addEventListener("click", changeImg);
 
 function changeImg2() {
 		para.innerHTML = '';
 		para.innerHTML += ausInfo;
-	if (imgCon.classList.contains('testAnimation2')) {
-		imgCon.classList.remove('testAnimation2');
-		imgCon.classList.add('testAnimation');
+	if (imgCon.classList.contains('stretchTwo')) {
+		imgCon.classList.remove('stretchTwo');
+		imgCon.classList.add('stretchOne');
 		imgCon.src = "images/austin_headshot.jpg";
 	}
 	else {
 		imgCon.src = "images/austin_headshot.jpg";
-		imgCon.classList.add('testAnimation');
+		imgCon.classList.add('stretchOne');
 	}
 }
 
-document.getElementById("testButton3").addEventListener("click", changeImg2);
+document.getElementById("patBtn").addEventListener("click", changeImg2);
 /* end of head shot image changing*/
 
 
@@ -69,7 +67,7 @@ function changeTitle() {
 	}
 } 
 
-document.getElementById("testButton3").addEventListener("click", changeTitle);
+document.getElementById("patBtn").addEventListener("click", changeTitle);
 
 function changeTitle2() {
 	if (title.hasChildNodes(document.getElementById("austinsTitle"))) {
@@ -79,7 +77,7 @@ function changeTitle2() {
 	}
 } 
 
-document.getElementById("testButton2").addEventListener("click", changeTitle2);
+document.getElementById("ausBtn").addEventListener("click", changeTitle2);
 /* end of title change on button press*/
 
 
@@ -93,7 +91,7 @@ function changeBck() {
 	}
 }
 
-document.getElementById("testButton2").addEventListener("click", changeBck);
+document.getElementById("ausBtn").addEventListener("click", changeBck);
 
 function changeBck2() {
 	if (bck.classList.contains('patBck')) {
@@ -102,5 +100,5 @@ function changeBck2() {
 	}
 }
 
-document.getElementById("testButton3").addEventListener("click", changeBck2);
+document.getElementById("patBtn").addEventListener("click", changeBck2);
 /* end of background change on button press*/

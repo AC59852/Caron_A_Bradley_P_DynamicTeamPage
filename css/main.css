@@ -1,10 +1,11 @@
 /* Standard background, just locked it in place with background attachment*/
 .ausBck
 {
-  background-image: url(../images/bck.jpg);
+  background-image: url(../images/aus_bck.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   font-family: 'Oxygen', sans-serif;
+  background-size: cover;
 }
 
 .hidden
@@ -12,10 +13,10 @@
   display: none;
 }
 
-#testButton2 {
+#ausBtn {
   border: 3px solid black;
 }
-#testButton3 {
+#patBtn {
   border: 3px solid black;
 }
 
@@ -32,12 +33,12 @@
   border: 3px solid black;
 }
 
-.testAnimation
+.stretchOne
 {
-  animation: testReveal 0.5s ease-in;
+  animation: stretchRevealOne 0.5s ease-in;
 }
 
-@keyframes testReveal {
+@keyframes stretchRevealOne {
   0% { visibility: hidden;
     opacity: 0;
     transform: scaleX(3);
@@ -48,12 +49,12 @@
     opacity: 1;}
 }
 
-.testAnimation2
+.stretchTwo
 {
-  animation: testRevealTwo 0.5s ease-in;
+  animation: stretchRevealTwo 0.5s ease-in;
 }
 
-@keyframes testRevealTwo {
+@keyframes stretchRevealTwo {
   0% { visibility: hidden;
     opacity: 0;
     transform: scaleX(3);
@@ -68,16 +69,6 @@
   content: "Austin";
 }
 
-.testAnimation3 {
-  animation: slidein 0.5s ease-in;
-}
-
-@keyframes slidein {
-    0% { height: 100px; visibility: hidden;}
-    20% {   visibility: visible;}
-    35% {   visibility: visible;}
-    100% { height: 500px; visibility: visible;}
-}
 
 
 /* This was interesting to learn. This Id allows for an image to be masked in text without it being an svg.
