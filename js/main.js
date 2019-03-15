@@ -70,20 +70,26 @@ var austinTitle = document.createElement('p'),
 
 
 function changeTitle() {
-	if (title.hasChildNodes(document.getElementById("patricksTitle"))) {
+	if (title.hasChildNodes(document.getElementById("title"))) {
+		title.textContent = '';
+		title.appendChild(austinTitle);
+	}
+	else if (title.hasChildNodes(document.getElementById("title"))) {
 		title.removeChild(document.getElementById("patricksTitle"));
 		title.appendChild(austinTitle);
-		return false;
 	}
 } 
 
 document.getElementById("patBtn").addEventListener("click", changeTitle);
 
 function changeTitle2() {
-	if (title.hasChildNodes(document.getElementById("austinsTitle"))) {
+	if (title.hasChildNodes(document.getElementById("title"))) {
+		title.textContent = '';
+		title.appendChild(patrickTitle);
+	}
+	else if (title.hasChildNodes(document.getElementById("title"))) {
 		title.removeChild(document.getElementById("austinsTitle"));
 		title.appendChild(patrickTitle);
-		return false;
 	}
 } 
 

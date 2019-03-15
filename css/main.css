@@ -105,8 +105,8 @@
     opacity: 1;}
 }
 
-.austinTitle {
-  content: "Austin";
+#atestLoadAnim ::after {
+  content: "test";
 }
 
 
@@ -130,7 +130,7 @@ Though this does not work for videos. The picture is a mashup of Amalee's thumbn
 #testLoadAnim p
 {
   font-family: impact;
-  font-size: 400px;
+  font-size: 370px;
   animation: textdown 0.6s ease-out;
 }
 
