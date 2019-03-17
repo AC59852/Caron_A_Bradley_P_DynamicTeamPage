@@ -81,11 +81,6 @@
   border: 3px solid black;
 }
 
-.stretchOne
-{
-  animation: stretchRevealOne 0.5s ease-in;
-}
-
 @keyframes stretchRevealOne {
   0% { visibility: hidden;
     opacity: 0;
@@ -96,28 +91,6 @@
     filter: blur(0px);
     opacity: 1;}
 }
-
-.stretchTwo
-{
-  animation: stretchRevealTwo 0.5s ease-in;
-}
-
-@keyframes stretchRevealTwo {
-  0% { visibility: hidden;
-    opacity: 0;
-    transform: scaleX(3);
-    filter: blur(10px);}
-  100% { visibility: visible;
-    transform: scaleX(1);
-    filter: blur(0px);
-    opacity: 1;}
-}
-
-#atestLoadAnim ::after {
-  content: "test";
-}
-
-
 
 /* This was interesting to learn. This Id allows for an image to be masked in text without it being an svg.
 Though this does not work for videos. The picture is a mashup of Amalee's thumbnail icons that I put together.*/

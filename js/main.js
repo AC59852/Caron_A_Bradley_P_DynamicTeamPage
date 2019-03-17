@@ -10,45 +10,45 @@ what to change, and what to review*/
 
 
 /* Start of head shot image changing*/ 
-var imgCon = document.querySelector("#img1");
-para.classList.remove("stretchOne");
+var imgCon = document.querySelector("#img1"),
+	ausButton = document.querySelector("#ausBtn");
 
 function changeImg() {
 	para.innerHTML = '';
 	/* para.innerHTML '', is a failsafe mostly, saying that if there is anything originally in the div i.e the original paragraph, remove it
 	and leave the div blank. para.innerHTML += patInfo, says to then add this info to #para, as defined be the query selector
 	above.*/
+	imgCon.style.WebkitAnimation = "stretchRevealOne 0.5s";
+	imgCon.addEventListener("webkitAnimationStart", testStart);
+	imgCon.addEventListener("webkitAnimationEnd", testEnd);
+	imgCon.src = "images/patrick_headshot.jpg";
 	para.innerHTML += patInfo;
-	imgCon.classList.add('stretchTwo');
-	if (imgCon.classList.contains('stretchOne')) {
-		imgCon.classList.remove('stretchOne');
-		imgCon.src = "images/patrick_headshot.jpg";
-	}
-	else {
-		imgCon.src = "images/patrick_headshot.jpg";
-	}
-}/* This if else function is checking for the class stretchOne, which is on Austin's bio. If it is, remove it and add the stretchTwo
-animation. If the if function comes back as a negative, saying there is no stretchOne, just add Patrick's image.*/
+}/*THIS HAS BEEN UPDATED. WebkitAnimation adds the animation from CSS directly as a style to the img. AnimationStart fires the instant
+the animation starts, and just triggers a console log saying "image animation started". AnimationEnd fires the instant the animation
+ends, with a console log saying it has ended, as well as removing the style from the image. ImgCon.src is just changing the source
+image to whose ever button was clicked, in this case, patricks.*/
+function testStart() {
+	console.log("Image Animation Started");
+}
 
+function testEnd() {
+	console.log("Image Animation Ended");
+	imgCon.style.WebkitAnimation = '';
+}
 
-document.getElementById("ausBtn").addEventListener("click", changeImg);
+ausButton.addEventListener("click", changeImg);
 
 function changeImg2() {
 		para.innerHTML = '';
 		para.innerHTML += ausInfo;
-	if (imgCon.classList.contains('stretchTwo')) {
-		imgCon.classList.remove('stretchTwo');
-		imgCon.classList.add('stretchOne');
-		imgCon.src = "images/austin_headshot.jpg";
-	}
-	else {
-		imgCon.src = "images/austin_headshot.jpg";
-		imgCon.classList.add('stretchOne');
-	}
+	imgCon.style.WebkitAnimation = "stretchRevealOne 0.5s";
+	imgCon.addEventListener("webkitAnimationStart", testStart);
+	imgCon.addEventListener("webkitAnimationEnd", testEnd);
+	imgCon.src = "images/austin_headshot.jpg";
 }
 
-/* This function is doing the same thing as above. Checking for stretchTwo, removing it and adding stretchOne if it's there. And
-if not, add it anyways and add the image*/
+/* THIS HAS BEEN UPDATED. This function is doing the same thing as above. Adding the animation, firing animation start with the console log,
+checking for animation end, then removing the style.*/
 
 document.getElementById("patBtn").addEventListener("click", changeImg2);
 /* end of head shot image changing*/
@@ -74,10 +74,6 @@ function changeTitle() {
 		title.textContent = '';
 		title.appendChild(austinTitle);
 	}
-	else if (title.hasChildNodes(document.getElementById("title"))) {
-		title.removeChild(document.getElementById("patricksTitle"));
-		title.appendChild(austinTitle);
-	}
 } 
 
 document.getElementById("patBtn").addEventListener("click", changeTitle);
@@ -85,10 +81,6 @@ document.getElementById("patBtn").addEventListener("click", changeTitle);
 function changeTitle2() {
 	if (title.hasChildNodes(document.getElementById("title"))) {
 		title.textContent = '';
-		title.appendChild(patrickTitle);
-	}
-	else if (title.hasChildNodes(document.getElementById("title"))) {
-		title.removeChild(document.getElementById("austinsTitle"));
 		title.appendChild(patrickTitle);
 	}
 } 
