@@ -33,7 +33,7 @@ function testStart() {
 
 function testEnd() {
 	console.log("Image Animation Ended");
-	imgCon.style.WebkitAnimation = '';
+	imgCon.removeAttribute("style");
 }
 
 ausButton.addEventListener("click", changeImg);
