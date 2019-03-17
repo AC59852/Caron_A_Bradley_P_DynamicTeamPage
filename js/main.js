@@ -12,6 +12,7 @@ what to change, and what to review*/
 /* Start of head shot image changing*/ 
 var imgCon = document.querySelector("#img1"),
 	ausButton = document.querySelector("#ausBtn");
+	patButton = document.querySelector("#patBtn");
 
 function changeImg() {
 	para.innerHTML = '';
@@ -36,7 +37,7 @@ function testEnd() {
 	imgCon.removeAttribute("style");
 }
 
-ausButton.addEventListener("click", changeImg);
+patButton.addEventListener("click", changeImg);
 
 function changeImg2() {
 		para.innerHTML = '';
@@ -50,7 +51,7 @@ function changeImg2() {
 /* THIS HAS BEEN UPDATED. This function is doing the same thing as above. Adding the animation, firing animation start with the console log,
 checking for animation end, then removing the style.*/
 
-document.getElementById("patBtn").addEventListener("click", changeImg2);
+ausButton.addEventListener("click", changeImg2);
 /* end of head shot image changing*/
 
 
@@ -76,7 +77,7 @@ function changeTitle() {
 	}
 } 
 
-document.getElementById("patBtn").addEventListener("click", changeTitle);
+ausButton.addEventListener("click", changeTitle);
 
 function changeTitle2() {
 	if (title.hasChildNodes(document.getElementById("title"))) {
@@ -88,7 +89,7 @@ function changeTitle2() {
 /* These are the live title changes. Clicking on either persons button, will remove the node nameTitle, and append the
 name of the persons button you pressed*/
 
-document.getElementById("ausBtn").addEventListener("click", changeTitle2);
+patButton.addEventListener("click", changeTitle2);
 /* end of title change on button press*/
 
 
@@ -106,7 +107,7 @@ function changeBck() {
 	}
 }
 
-document.getElementById("ausBtn").addEventListener("click", changeBck);
+patButton.addEventListener("click", changeBck);
 
 function changeBck2() {
 	if (bck.classList.contains('bck')) {
@@ -122,5 +123,5 @@ function changeBck2() {
 /* This is simply changing out the backgrounds on pressing that persons button. It checks if it contains nameBck, removes it
 and adds the other persons.*/
 
-document.getElementById("patBtn").addEventListener("click", changeBck2);
+ausButton.addEventListener("click", changeBck2);
 /* end of background change on button press*/

@@ -25,20 +25,20 @@
   border: 3px solid black;
   width: 10%;
   padding: 20px;
-  margin-right: 8px;
-  background-image: url(../images/killua_blur.png);
-  background-size: cover;
+  background-image: url(../images/angel_blur.png);
+  background-size: 190px 120px;
+  background-repeat: no-repeat;
+  background-position: -15px -4px;
   font-weight: bold;
-
+  margin-right: 10px;
 }
 #patBtn {
   border: 3px solid black;
   width: 10%;
   padding: 20px;
-  background-image: url(../images/angel_blur.png);
-  background-size: 190px 120px;
-  background-repeat: no-repeat;
-  background-position: -15px -4px;
+  margin-right: 8px;
+  background-image: url(../images/killua_blur.png);
+  background-size: cover;
   font-weight: bold;
 }
 
@@ -74,11 +74,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Oxygen', sans-serif;
-}
-
-#testButton
-{
-  border: 3px solid black;
 }
 
 @keyframes stretchRevealOne {
