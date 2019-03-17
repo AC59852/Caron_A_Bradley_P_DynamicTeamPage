@@ -104,7 +104,11 @@ document.getElementById("ausBtn").addEventListener("click", changeTitle2);
 var bck = document.querySelector("#bck")
 
 function changeBck() {
-	if (bck.classList.contains('ausBck')) {
+	if (bck.classList.contains('bck')) {
+		bck.classList.remove('bck');
+		bck.classList.add('patBck');
+	}
+	else {
 		bck.classList.remove('ausBck');
 		bck.classList.add('patBck');
 	}
@@ -113,7 +117,11 @@ function changeBck() {
 document.getElementById("ausBtn").addEventListener("click", changeBck);
 
 function changeBck2() {
-	if (bck.classList.contains('patBck')) {
+	if (bck.classList.contains('bck')) {
+		bck.classList.remove('bck');
+		bck.classList.add('ausBck');
+	}
+	else {
 		bck.classList.remove('patBck');
 		bck.classList.add('ausBck');
 	}

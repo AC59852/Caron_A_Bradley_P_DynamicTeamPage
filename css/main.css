@@ -60,6 +60,14 @@
   letter-spacing: 0.8px;
 }
 
+.bck {
+  background-image: url(../images/melee_blurred.jpg);
+   background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Oxygen', sans-serif;
+  background-size: 1900px 900px;
+}
+
 .patBck {
   background-image: url(../images/patrick_bck_blur.jpg);
   background-attachment: fixed;
